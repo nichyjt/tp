@@ -89,6 +89,7 @@ public abstract class Manager {
      * @return ArrayList of each command's full description
      */
     public ArrayList<String> getCommandDescriptions() {
+        assert supportedCommands != null : "supportedCommands should not be null";
         ArrayList<String> descriptions = new ArrayList<>();
         for (Command command : supportedCommands) {
             descriptions.add(command.toString());
@@ -102,6 +103,7 @@ public abstract class Manager {
      * @return <code>ArrayList</code> of <code>Command</code>s
      */
     public ArrayList<Command> getSupportedCommands() {
+        assert supportedCommands != null : "supportedCommands should not be null";
         return supportedCommands;
     }
 
