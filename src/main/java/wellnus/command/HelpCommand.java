@@ -9,15 +9,15 @@ import java.util.HashMap;
 
 /**
  * Implementation of WellNus' <code>help</code> command. Explains to the user what commands are supported
- *   by WellNus and how to use each command.
+ * by WellNus and how to use each command.
  */
 public class HelpCommand extends Command {
     private static final String BAD_COMMAND_MESSAGE = "Invalid arguments given for %s command";
     private static final String BAD_COMMAND_ADVICE_MESSAGE = "Try 'help' for a list of "
-            + "commands/features supported by WellNUS++";
+                                                                 + "commands/features supported by WellNUS++";
     private static final String COMMAND_ARGUMENTS = "<feature>";
-    private static final String COMMAND_BRIEF_DESCRIPTION = "Lists all features supported by WellNUS++, or all " +
-            "commands supported by a specific feature";
+    private static final String COMMAND_BRIEF_DESCRIPTION = "Lists all features supported by WellNUS++, or all "
+                                                                + "commands supported by a specific feature";
     private static final String COMMAND_DETAILED_DESCRIPTION = "";
     private static final String COMMAND_INVALID_KEYWORD_MESSAGE = "Wrong command for 'help'";
     private static final String COMMAND_KEYWORD = "help";
@@ -28,7 +28,7 @@ public class HelpCommand extends Command {
     private final TextUi textUi;
 
     public HelpCommand(HashMap<String, String> arguments, MainManager mainManager)
-            throws BadCommandException {
+        throws BadCommandException {
         super(arguments);
         this.mainManager = mainManager;
         this.textUi = new TextUi();
@@ -93,12 +93,12 @@ public class HelpCommand extends Command {
 
     /**
      * Executes the issued help command.<br>
-     *
+     * <p>
      * Prints a brief description of all of WellNus' supported commands if
-     *   the basic 'help' command was issued.<br>
-     *
+     * the basic 'help' command was issued.<br>
+     * <p>
      * Prints a detailed description of a specific feature if the specialised
-     *   'help' command was issued.
+     * 'help' command was issued.
      */
     @Override
     public void execute() {
@@ -106,7 +106,7 @@ public class HelpCommand extends Command {
             validateCommand(super.getArguments());
         } catch (BadCommandException badCommandException) {
             this.getTextUi().printErrorFor(badCommandException,
-                    HelpCommand.BAD_COMMAND_ADVICE_MESSAGE);
+                HelpCommand.BAD_COMMAND_ADVICE_MESSAGE);
             return;
         }
         if (isBriefHelp()) {
@@ -132,7 +132,7 @@ public class HelpCommand extends Command {
         boolean isFeatureSupported = this.getMainManager().isSupportedFeature(featureKeyword);
         if (!featureKeyword.isBlank() && !isFeatureSupported) {
             throw new BadCommandException(String.format(HelpCommand.UNKNOWN_FEATURE_MESSAGE,
-                    featureKeyword));
+                featureKeyword));
         }
     }
 }
