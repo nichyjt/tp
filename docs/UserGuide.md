@@ -26,7 +26,7 @@ faster than traditional Graphical User Interface(GUI) apps.
 * [Features](#features)
     * [Command Format](#command-format)
     * [`help` - Viewing WellNUS++ Help](#help---viewing-wellnus-help)
-    * [Accessing feature using FEATURE_NAME](#accessing-feature-from-main)
+    * [Accessing feature from Main](#accessing-feature-from-main)
     * [`hb` - Accessing atomic habit feature](#hb---accessing-atomic-habit-feature)
         * [`add` - Add new atomic habit](#add---add-new-atomic-habit)
         * [`list` - List all atomic habit](#list---list-all-atomic-habit)
